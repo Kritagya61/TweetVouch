@@ -32,19 +32,19 @@ router.get("/login/failed", (req, res) => {
 router.get("/logout", (req, res) => {
   console.log(req.user);
 
-  // Friends.deleteMany(
-  //   {
-  //     login_user_Id: req.user.ScreenName,
-  //     //check
-  //   },
-  //   function (err, result) {
-  //     if (err) {
-  //       console.err(err);
-  //     } else {
-  //       console.log(result);
-  //     }
-  //   }
-  // );
+  Friends.deleteMany(
+    {
+      login_user_Id: req.user.ScreenName,
+      //check
+    },
+    function (err, result) {
+      if (err) {
+        console.err(err);
+      } else {
+        console.log(result);
+      }
+    }
+  );
 
   req.logout();
   res.redirect("https://immense-badlands-87877.herokuapp.com/");
