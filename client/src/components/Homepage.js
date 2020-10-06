@@ -1,6 +1,6 @@
 import Header from "./Header";
 import React, { Component } from "react";
-// import { render } from "react-dom";
+
 import InfiniteScroll from "react-infinite-scroll-component";
 import DomainDisplay from "./Domain";
 import User from "./User";
@@ -131,11 +131,8 @@ export default class HomePage extends Component {
               j++
             ) {
               var url = this.state.tweets[k].entities.urls[j].expanded_url;
-              // var h = url.slice(0, 33);
-              // console.log(h);
 
               if (url.slice(0, 33) !== "https://twitter.com/i/web/status/") {
-                // console.log(url);
                 var urlParts = url
                   .replace("http://", "")
                   .replace("https://", "")
@@ -153,8 +150,7 @@ export default class HomePage extends Component {
               this.result = this.state.tweets[k].user.name;
             }
           }
-          // console.log(frequency);
-          // console.log("result " + this.result + " max " + this.max);
+
           for (var key in frequency) {
             this.domain.push([key, frequency[key]]);
           }
@@ -162,7 +158,7 @@ export default class HomePage extends Component {
           this.domain.sort(function compare(kv1, kv2) {
             return kv2[1] - kv1[1];
           });
-          // console.log(this.domain);
+
           var i;
           for (i = 0; i < 5 && i < res.data.length; i++) {
             this.dummy[i] = this.state.tweets[i];
@@ -171,8 +167,6 @@ export default class HomePage extends Component {
             items: this.dummy,
             counter: i,
           });
-
-          // console.log(this.state.tweets);
         });
       })
       .catch((e) => {
