@@ -1,0 +1,33 @@
+{
+  "name": "twitter_toplinks_app",
+  "version": "1.0.0",
+  "description": "Twitter Toplinks ",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Kritagya Kr Chaturvedi",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.3.0",
+    "cookie-parser": "^1.4.5",
+    "cookie-session": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "moment": "^2.29.0",
+    "mongoose": "^5.10.7",
+    "passport": "^0.4.1",
+    "passport-twitter": "^1.0.4",
+    "react-router-dom": "^5.2.0",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
