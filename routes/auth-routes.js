@@ -47,7 +47,7 @@ router.get("/logout", (req, res) => {
   );
 
   req.logout();
-  res.redirect(CLIENT_HOME_PAGE_URL);
+  res.redirect("https://immense-badlands-87877.herokuapp.com/");
 });
 
 // auth with twitter
@@ -57,7 +57,7 @@ router.get("/twitter", passport.authenticate("twitter"));
 router.get(
   "/twitter/redirect",
   passport.authenticate("twitter", {
-    successRedirect: CLIENT_HOME_PAGE_URL,
+    successRedirect: "https://immense-badlands-87877.herokuapp.com/",
     failureRedirect: "/auth/login/failed",
   })
 );
