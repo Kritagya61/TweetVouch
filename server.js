@@ -14,12 +14,6 @@ const cookieParser = require("cookie-parser"); // parse cookie header
 const path = require("path");
 
 //serve static assets if in production
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
 
 // connect to mongodb
 mongoose.connect(
@@ -88,5 +82,11 @@ app.get("/", authCheck, (req, res) => {
   });
 });
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 // connect react to nodejs express server
 app.listen(port, () => console.log(`Server is running on port ${port}!`));
