@@ -44,24 +44,12 @@ passport.use(
         strictSSL: true, // optional - requires SSL certificates to be valid.
       });
       var tweets = [];
-      // T.get(
-      //   "friends/ids",
-      //   { user_id: profile._json.id_str, stringify_ids: true, count: 150 },
-      //   function (err, data1, response) {
-      //     data1.ids.push(profile._json.id_str);
-      //     var l = data1.ids.length;
-
-      //     var incrementer = 0;
-      //     for (var i = 0; i < l; i++) {
-      //       var obj = data1.ids[i];
 
       T.get("statuses/home_timeline", { count: 1000 }, async function (
         err,
         data,
         response
       ) {
-        // console.log(data);
-        // incrementer++;
         for (var j = 0; j < data.length; j++) {
           var date = moment(
             data[j].created_at,
@@ -77,22 +65,7 @@ passport.use(
             tweets.push(data[j]);
           }
         }
-        // if (tweets.length > 0 && incrementer === i) {
-        //   if (tweets.length <= 1000) {
-        //     new Friends({
-        //       login_user_Id: profile._json.name,
-        //       data: tweets,
-        //     }).save();
-        //   } else {
-        //     for (var u = 0; u < tweets.length; u = u + 1000) {
-        //       var temp = tweets.slice(u, u + 1000);
-        //       new Friends({
-        //         login_user_Id: profile._json.name,
-        //         data: temp,
-        //       }).save();
-        //     }
-        //   }
-        // }
+
         if (tweets.length > 0) {
           await new Friends({
             login_user_Id: profile._json.screen_name,
@@ -100,9 +73,6 @@ passport.use(
           }).save();
         }
       });
-      //     }
-      //   }
-      // );
 
       // create new user if the database doesn't have this user
       if (!currentUser) {
