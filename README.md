@@ -1,22 +1,24 @@
 # Twitter TopLinks App
 
 Visit the website [here](https://immense-badlands-87877.herokuapp.com/) and give any suggestions and report bugs.<br/>
+[This website](https://immense-badlands-87877.herokuapp.com/) lets the user to login with Twitter and shows the tweets of the logged in user and his friends from past 7 days . The Top Domains shared and the Name of the user who has shared most Links.<br/>
 
 ## Screenshots
 
-- Homepage <br/><br/>
-  ![Homepage](https://i.imgur.com/ksBWFO4.png)
-- Loading screen (after clicking on the Login button in the top right corner)<br/><br/>
-  ![Loading](https://i.imgur.com/8O6idFB.png)
-- Your tweets after the loading is complete.<br/><br/>
-  ![Tweets](https://i.imgur.com/TbzlyNv.png)
-- Some more tweets after you scroll down <br/><br/>
-  ![More Tweets](https://i.imgur.com/DUU4nHZ.png)
-- The Top User tab. <br/><br/>
-  ![Top User](https://i.imgur.com/ZbuDrNO.png)
-- The Top Links tab. <br/><br/>
-  ![Top Links](https://i.imgur.com/2nOQzTl.png)
-  After this, you can logout by clicking in the top-right corner.
+- Homepage of the website <br/><br/>
+  ![Homepage](https://i.ibb.co/1QBZDsV/Homepage.png)
+- Loading screen i.e. the Tweets are fetched from the database (after clicking on the Login button in the top right corner)<br/><br/>
+  ![Loading](https://i.ibb.co/2Nc3Qnq/Loading.png)
+- The Logged In user and his friends tweets from past 7 days after the loading is complete.<br/><br/>
+  ![Tweets](https://i.ibb.co/0ZMV4KC/tweets.png)
+- This photo shows Some more tweets when you scroll down after loading of tweets <br/><br/>
+  ![More Tweets](https://i.ibb.co/5cVn2XR/Tweets-in-Tweets-Tab-when-you-scroll-down.png)
+- This Photo shows the Top domains in decreasing order of number of tweets i.e. The most tweeted Domain is the first <br/><br/>
+  ![Top User](https://i.ibb.co/7CG8b6s/Top-Domainsofpast7days.png)
+- This Photo shows the Top User Who has shared the most links <br/><br/>
+  ![Top Links](https://i.ibb.co/RjYSVmw/userwithmostsharedlinks.png)
+- After this, you can logout by clicking in the top-right corner.
+  ![Top Links](https://i.ibb.co/C82yvsC/Login.png)
 
 ## Technologies Used
 
@@ -25,6 +27,7 @@ Visit the website [here](https://immense-badlands-87877.herokuapp.com/) and give
 - [Node.js](https://nodejs.org/) for backend.<br/>
 - [Twitter API](https://developer.twitter.com/en/products/twitter-api) to fetch user's data from Twitter.
 - [Heroku](https://heroku.com/) for deployment.
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) for Database
 
 ## For Developers
 

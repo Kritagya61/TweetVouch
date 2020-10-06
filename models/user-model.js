@@ -1,3 +1,5 @@
+//To store the Twitter details of the Logged IN USER
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 

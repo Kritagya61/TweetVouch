@@ -30,6 +30,7 @@ mongoose.connect(
   }
 );
 
+//Middleware for Cookie Parser
 app.use(
   cookieSession({
     name: "session",
@@ -59,6 +60,7 @@ app.use(
 app.use("/auth", authRoutes);
 app.use("/tweets", tweetRoutes);
 
+//serve static points in production
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {

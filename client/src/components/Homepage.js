@@ -1,3 +1,5 @@
+//To show the TweetDetails of The THe User and his Friends From Past Three Days
+
 import Header from "./Header";
 import React, { Component } from "react";
 
@@ -23,6 +25,8 @@ export default class HomePage extends Component {
     items: [],
     counter: 0,
   };
+
+  //This Function helps InfiniteScroll to get more data to fetch
   fetchMoreData = () => {
     var j;
     for (
@@ -36,12 +40,14 @@ export default class HomePage extends Component {
       counter: j,
       items: this.state.items.concat(this.dummy),
     });
-    console.log(this.state.counter + " " + this.state.items.length);
   };
 
+  //This Function Helps to show the User Who has shared The most number of tweets
   renderUser = () => {
     return <User user={this.result} number={this.max} />;
   };
+
+  //This function renders tweet of user and his friends from past 3 days on the Tweets tab in the frontened
   renderTweet = (item, index) => {
     if (index < this.state.tweets.length) {
       return (
@@ -53,6 +59,8 @@ export default class HomePage extends Component {
       return <div key={index}></div>;
     }
   };
+
+  //This Component shows the List of Domain in the Domains from past 7 Days Tab in frontended
   renderDomain = () => {
     let domaincomponent = this.domain.map((item, index) => (
       <DomainDisplay key={index} details={item} />
@@ -60,6 +68,7 @@ export default class HomePage extends Component {
     return domaincomponent;
   };
 
+  //Renders the Tweet using Infinite Scroll
   renderItems = () => {
     return (
       <div>
@@ -108,8 +117,6 @@ export default class HomePage extends Component {
           this.setState({
             tweets: [].concat.apply([], temp),
           });
-          console.log(res.data);
-          console.log("hello" + this.state.tweets[0]);
 
           if (res.data.hasOwnProperty("error")) {
             this.reloding();

@@ -1,5 +1,7 @@
 const router = require("express").Router();
 
+//To get the tweets for the friends of the loggedin user
+
 const Friends = require("../models/friends-model");
 router.get("/", async (req, res) => {
   try {
@@ -15,11 +17,12 @@ router.get("/", async (req, res) => {
   }
 });
 
+//To delete the Tweets of the logged in user and his friends
+
 router.delete("/", (req, res) => {
   Friends.remove(
     {
-      login_user_Id: req.user.screenName
-     
+      login_user_Id: req.user.screenName,
     },
     function (err, result) {
       if (err) {

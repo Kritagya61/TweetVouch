@@ -1,3 +1,5 @@
+//This Component Shows the list of Domains in the The Most Shared Domains and the number of tweets of that domain
+
 import React, { Component } from "react";
 
 export class Domain extends Component {

@@ -34,8 +34,7 @@ router.get("/logout", (req, res) => {
 
   Friends.deleteMany(
     {
-      login_user_Id: req.user.ScreenName,
-      //check
+      login_user_Id: req.user.screenName,
     },
     function (err, result) {
       if (err) {
