@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const passport = require("passport");
-const CLIENT_HOME_PAGE_URL = "http://localhost:3000";
+const CLIENT_HOME_PAGE_URL = "https://immense-badlands-87877.herokuapp.com/";
 
 const mongo = require("mongodb");
 const Friends = require("../models/friends-model");

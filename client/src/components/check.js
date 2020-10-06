@@ -104,7 +104,7 @@
 //     )
 // );
 
-//     fetch("http://localhost:5000/auth/login/success", {
+//     fetch("https://immense-badlands-87877.herokuapp.com/auth/login/success", {
 //         method: "GET",
 //         credentials: "include",
 //         headers: {

@@ -27,7 +27,9 @@ passport.use(
     {
       consumerKey: keys.TWITTER_CONSUMER_KEY,
       consumerSecret: keys.TWITTER_CONSUMER_SECRET,
-      callbackURL: "/auth/twitter/redirect",
+      callbackURL:
+        "https://immense-badlands-87877.herokuapp.com/" +
+        "/auth/twitter/redirect",
     },
     async (token, tokenSecret, profile, done) => {
       // find current user in UserModel
