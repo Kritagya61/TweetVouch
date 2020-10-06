@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 router.delete("/", (req, res) => {
   Friends.remove(
     {
-      login_user_Id: req.user.ScreenName,
+      login_user_Id: req.user.screenName,
       //check
     },
     function (err, result) {
