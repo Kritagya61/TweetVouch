@@ -32,9 +32,9 @@ router.get("/login/failed", (req, res) => {
 router.get("/logout", (req, res) => {
   console.log(req.user);
 
-  Friends.deleteMany(
+  Friends.remove(
     {
-      login_user_Id: req.user.screenName,
+      login_user_Id: req.user.ScreenName,
       //check
     },
     function (err, result) {
