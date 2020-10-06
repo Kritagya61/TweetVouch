@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import React, { Component } from "react";
+import Axios from "axios";
 
 export class Header extends Component {
   _handleSignInClick = () => {
@@ -16,6 +17,13 @@ export class Header extends Component {
   _handleLogoutClick = () => {
     // Logout using Twitter passport api
     // Set authenticated state to false in the HomePage
+    Axios.delete("/tweets")
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     window.open(
       "https://immense-badlands-87877.herokuapp.com/auth/logout",
       "_self"

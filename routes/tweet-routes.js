@@ -15,4 +15,20 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.delete("/", (req, res) => {
+  Friends.remove(
+    {
+      login_user_Id: req.user.ScreenName,
+      //check
+    },
+    function (err, result) {
+      if (err) {
+        console.err(err);
+      } else {
+        console.log(result);
+      }
+    }
+  );
+});
+
 module.exports = router;
